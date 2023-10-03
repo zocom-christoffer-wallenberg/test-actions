@@ -20,10 +20,12 @@ function Editor() {
             { configuration && <h2>Ange dimensioner</h2> }
             { configuration && <form className='editor__form'> { /** Om configation är true, visa <form> */}
                 <input type="text" placeholder="Bredd" defaultValue={ panelWidth }
+                    className='editor__input'
                     onChange={ (event) => setPanelWidth(parseInt(event.target.value)) }/>
                 <input type="text" placeholder="Höjd" defaultValue={ panelHeight }
+                    className='editor__input'
                     onChange={ (event) => setPanelHeight(parseInt(event.target.value)) } />
-                <button onClick={ initializeDrawing }>Börja rita</button>
+                <button className="editor__button" onClick={ initializeDrawing }>Börja rita</button>
             </form> }
             { !configuration && <TwitterPicker onChangeComplete={ setPixelColor } /> }
             { !configuration && <DrawingPanel width={ panelWidth } height={ panelHeight } color={ pixelColor } /> }
